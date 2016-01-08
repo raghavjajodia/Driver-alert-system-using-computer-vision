@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Intelligent eye", "Intelligent eye\Intelligent eye.vcxproj", "{5911F6D8-8A89-4DCA-9A15-4FAD1D9A7F86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5911F6D8-8A89-4DCA-9A15-4FAD1D9A7F86}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5911F6D8-8A89-4DCA-9A15-4FAD1D9A7F86}.Debug|Win32.Build.0 = Debug|Win32
+		{5911F6D8-8A89-4DCA-9A15-4FAD1D9A7F86}.Release|Win32.ActiveCfg = Release|Win32
+		{5911F6D8-8A89-4DCA-9A15-4FAD1D9A7F86}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
