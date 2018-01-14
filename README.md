@@ -8,3 +8,6 @@ How to run the solution?
 2) Hit on Build
 
 You can adjust the threshold number of frames in which eyes are closed, following which beep will be produced.
+
+![alt text](https://github.com/raghavjajodia/Driver-alert-system-using-computer-vision/blob/master/data/detection.JPG
+)
