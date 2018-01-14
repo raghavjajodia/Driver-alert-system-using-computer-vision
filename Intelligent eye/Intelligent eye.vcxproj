@@ -18,6 +18,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Xml Include="..\data\haarcascade_eye.xml" />
     <Xml Include="..\data\haarcascade_frontalface_alt.xml">
       <DeploymentContent>true</DeploymentContent>
     </Xml>

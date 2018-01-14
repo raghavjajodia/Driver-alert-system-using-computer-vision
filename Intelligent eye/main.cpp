@@ -4,16 +4,18 @@
 
 #include <iostream>
 #include <stdio.h>
+#include <windows.h> // WinApi header 
 
 using namespace std;
 using namespace cv;
 
 /** Function Headers */
-void detectAndDisplay(Mat frame);
+bool detectAndDisplay(Mat frame);
 
 /** Global variables */
 String face_cascade_name = "..\\data\\haarcascade_frontalface_alt.xml";
 String eyes_cascade_name = "..\\data\\haarcascade_lefteye_2splits.xml";
+int acceptableFrameThreshold = 5;
 
 CascadeClassifier face_cascade;
 CascadeClassifier eyes_cascade;
@@ -25,7 +27,7 @@ int main(int argc, const char** argv)
 {
 	CvCapture* capture;
 	Mat frame;
-
+	
 	//-- 1. Load the cascades
 	if (!face_cascade.load(face_cascade_name)){ 
 		printf("--(!)Error loading\n"); return -1; };
@@ -36,6 +38,8 @@ int main(int argc, const char** argv)
 	capture = cvCaptureFromCAM(0);
 	if (capture)
 	{
+		int missFrameCount = 0;
+
 		while (true)
 		{
 			frame = cvQueryFrame(capture);
@@ -43,7 +47,22 @@ int main(int argc, const char** argv)
 			//-- 3. Apply the classifier to the frame
 			if (!frame.empty())
 			{
-				detectAndDisplay(frame);
+				bool eyes_detected = detectAndDisplay(frame);
+
+				if (eyes_detected)
+				{
+					missFrameCount = 0;
+				}
+				else
+				{
+					missFrameCount = missFrameCount + 1;
+				}
+
+				if (missFrameCount > acceptableFrameThreshold)
+				{
+					//Do something
+					Beep(523, 500);
+				}
 			}
 			else
 			{
@@ -58,10 +77,12 @@ int main(int argc, const char** argv)
 }
 
 /** @function detectAndDisplay */
-void detectAndDisplay(Mat frame)
+/* returns boolean flag as true if eyes are detected in the frame */
+bool detectAndDisplay(Mat frame)
 {
 	std::vector<Rect> faces;
 	Mat frame_gray;
+	bool eyes_detected = false;
 
 	cvtColor(frame, frame_gray, CV_BGR2GRAY);
 	equalizeHist(frame_gray, frame_gray);
@@ -80,6 +101,11 @@ void detectAndDisplay(Mat frame)
 		//-- In each face, detect eyes
 		eyes_cascade.detectMultiScale(faceROI, eyes, 1.1, 2, 0 | CV_HAAR_SCALE_IMAGE, Size(30, 30));
 
+		if(eyes.size() > 0)
+		{
+			eyes_detected = true;
+		}
+
 		for (size_t j = 0; j < eyes.size(); j++)
 		{
 			Point center(faces[i].x + eyes[j].x + eyes[j].width*0.5, faces[i].y + eyes[j].y + eyes[j].height*0.5);
@@ -89,4 +115,5 @@ void detectAndDisplay(Mat frame)
 	}
 	//-- Show what you got
 	imshow(window_name, frame);
+	return eyes_detected;
 }

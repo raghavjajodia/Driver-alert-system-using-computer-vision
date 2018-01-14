@@ -1,3 +1,6 @@
-﻿  LINK : C:\Users\rajaj\Documents\gitRepo\Driver-alert-system-using-computer-vision\Debug\Intelligent eye.exe not found or not built by the last incremental link; performing full link
+﻿  main.cpp
+c:\users\rajaj\documents\gitrepo\driver-alert-system-using-computer-vision\intelligent eye\main.cpp(95): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\rajaj\documents\gitrepo\driver-alert-system-using-computer-vision\intelligent eye\main.cpp(96): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\rajaj\documents\gitrepo\driver-alert-system-using-computer-vision\intelligent eye\main.cpp(111): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Intelligent eye.vcxproj -> C:\Users\rajaj\Documents\gitRepo\Driver-alert-system-using-computer-vision\Debug\Intelligent eye.exe
   Intelligent eye.vcxproj -> C:\Users\rajaj\Documents\gitRepo\Driver-alert-system-using-computer-vision\Debug\Intelligent eye.pdb (Full PDB)

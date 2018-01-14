@@ -25,5 +25,6 @@
   <ItemGroup>
     <Xml Include="..\data\haarcascade_frontalface_alt.xml" />
     <Xml Include="..\data\haarcascade_lefteye_2splits.xml" />
+    <Xml Include="..\data\haarcascade_eye.xml" />
   </ItemGroup>
 </Project>
