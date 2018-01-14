@@ -19,4 +19,11 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\data\haarcascade_frontalface_alt.xml" />
+    <Xml Include="..\data\haarcascade_lefteye_2splits.xml" />
+  </ItemGroup>
 </Project>

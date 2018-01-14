@@ -12,8 +12,9 @@ using namespace cv;
 void detectAndDisplay(Mat frame);
 
 /** Global variables */
-String face_cascade_name = "C://opencv//sources//data//haarcascades//haarcascade_frontalface_alt.xml";
-String eyes_cascade_name = "C://opencv//sources//data//haarcascades//haarcascade_lefteye_2splits.xml";
+String face_cascade_name = "..\\data\\haarcascade_frontalface_alt.xml";
+String eyes_cascade_name = "..\\data\\haarcascade_lefteye_2splits.xml";
+
 CascadeClassifier face_cascade;
 CascadeClassifier eyes_cascade;
 string window_name = "Capture - Face detection";
